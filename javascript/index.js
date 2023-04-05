@@ -24,6 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  // Brisbane
+  let brisbaneElement = document.querySelector("#brisbane");
+  if (brisbaneElement) {
+    let brisbaneDateElement = brisbaneElement.querySelector(".date");
+    let brisbaneTimeElement = brisbaneElement.querySelector(".time");
+    let brisbaneTime = moment().tz("Australia/Brisbane");
+
+    brisbaneDateElement.innerHTML = brisbaneTime.format("MMMM	Do YYYY");
+    brisbaneTimeElement.innerHTML = brisbaneTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
